@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Chat-app</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="sockjs.min.js"></script>
+    <script src="stomp.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div id="main-content">
+    <div>
+        <div>
+            <label>What is your username?</label>
+            <input type="text" id="username" placeholder="Your username here...">
+        </div>
+        <button id="connect" type="submit">Connect</button>
+        <form id="messageForm" name="messageForm">
+            <div>
+                <label>User will received message</label>
+                <input type="text" id="name" name="to" placeholder="User will receive the message...">
+                <input type="text" id="messageText" name="message" placeholder="Enter your message here...">
+            </div>
+            <button id="send" type="submit">Send</button>
+        </form>
+    </div>
+</div>
+<div>
+    <label>Message from someone: </label><span id="message"></span>
+</div>
+</body>
+</html>
