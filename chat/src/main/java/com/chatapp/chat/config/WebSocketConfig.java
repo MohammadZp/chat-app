@@ -16,12 +16,16 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
             registry.addEndpoint("/message").withSockJS();
         }
 
-        @Override
-        public void configureMessageBroker(MessageBrokerRegistry registry) {
-            registry.enableSimpleBroker("queue");
-            registry.setApplicationDestinationPrefixes("/app");
-            registry.setUserDestinationPrefix("/users");
-        }
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+        registry.enableStompBrokerRelay("/queue")
+                .setRelayHost("localhost")
+                .setRelayPort(61613)
+                .setClientLogin("guest")
+                .setClientPasscode("guest");
+        registry.setApplicationDestinationPrefixes("/app");
+        registry.setUserDestinationPrefix("/users");
+    }
 
         @Override
         public void configureClientInboundChannel(ChannelRegistration registration) {

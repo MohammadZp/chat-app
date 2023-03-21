@@ -2,6 +2,7 @@ package com.chatapp.chat.model;
 
 import java.security.Principal;
 
+
 public class User implements Principal {
 
     private String name;
